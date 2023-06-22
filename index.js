@@ -170,6 +170,12 @@ Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
 NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA TESTİ GEÇMEYECEKTİR!
 ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenomen: Leo Messi' */
 
+function indekseGoreFenomen(aFenomenler, index) {
+  return index + ". indekste bulunan fenomen: " + aFenomenler[index].profile;
+}
+
+console.log(indekseGoreFenomen(fenomenler, 3));
+
 /*  Görev 4:
 Aşağıdakileri yapmak için profilListesi'ni kullanın:
 1. fenomen dizisini bir parametreden argüman olarak alın
