@@ -192,7 +192,9 @@ function profilListesi(aFenomenler) {
   return kopyaFenomenler;
 }
 
+//console.log(fenomenler); bu satır tek tek objeleri yazdırırken,
 console.log(profilListesi(fenomenler));
+//console.log(fenomenler); bu satır sadece profil isimlerini yazdırıyor. fonksiyonun asıl listeyi değiştirmemesi lazımdı. neden?
 
 /* Görev 5:
 Aşağıdakileri yapmak için fenomenSil'i kullanın:
@@ -203,9 +205,14 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 5. Ortaya çıkan diziyi döndürün
 
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
-function fenomenSil(/*kod*/) {
-  /*kod*/
+function fenomenSil(aFenomenler, index) {
+  const kopyaFenomenler = aFenomenler;
+  kopyaFenomenler.splice(index, 1);
+  return kopyaFenomenler;
 }
+
+console.log(fenomenSil(fenomenler, 1));
+//ve bu test nasıl doğru geliyor, obje değil string array'i dönüyor
 
 /* Görev 6:
 Aşağıdakileri yapmak için fenomenEkle'i kullanın:
