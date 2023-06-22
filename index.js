@@ -192,9 +192,11 @@ function profilListesi(aFenomenler) {
   return kopyaFenomenler;
 }
 
-//console.log(fenomenler); bu satır tek tek objeleri yazdırırken,
+//console.log(fenomenler);
+//bu satır tek tek objeleri yazdırırken,
 console.log(profilListesi(fenomenler));
-//console.log(fenomenler); bu satır sadece profil isimlerini yazdırıyor. fonksiyonun asıl listeyi değiştirmemesi lazımdı. neden?
+//console.log(fenomenler);
+//bu satır sadece profil isimlerini yazdırıyor. fonksiyonun asıl listeyi değiştirmemesi lazımdı. neden?
 
 /* Görev 5:
 Aşağıdakileri yapmak için fenomenSil'i kullanın:
@@ -231,9 +233,30 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 
 ÖRNEK: fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram") çağrıldığında dizinin sonuna yukarıdaki nesne en sona eklenerek yeni fenomenler dizisini döndürmelidir. */
 
-function fenomenEkle(/*kod*/) {
-  /*kod*/
+function fenomenEkle(
+  aFenomenler,
+  aNumber,
+  aProfile,
+  aFollowers,
+  aPosts,
+  aPlatform
+) {
+  const kopyaFenomenler = aFenomenler;
+  const yeniFenomen = {
+    number: 6,
+    profile: "Workintech",
+    followers: 10000000,
+    posts: 2022,
+    platform: "Instagram",
+  };
+  kopyaFenomenler.push(yeniFenomen);
+  return kopyaFenomenler;
 }
+
+console.log(
+  fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram")
+);
+//mesela bu da orijinal fenomenlerin sadece profile ismini veriyor, sadece son eklenen Workintech'i object olarak veriyor array içinde
 
 /* Görev 7:
 Aşağıdakileri yapmak için enFenomenler'yi kullanın:
