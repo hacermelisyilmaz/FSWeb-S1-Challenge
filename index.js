@@ -184,9 +184,15 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 🌟 Dönüş ÖRNEĞİ: ["Instagram", "Cristiano Ronaldo", "Kylie"....]
 */
 
-function profilListesi(/*kod*/) {
-  /*kod*/
+function profilListesi(aFenomenler) {
+  const kopyaFenomenler = aFenomenler;
+  for (let i = 0; i < kopyaFenomenler.length; i++) {
+    kopyaFenomenler[i] = kopyaFenomenler[i].profile;
+  }
+  return kopyaFenomenler;
 }
+
+console.log(profilListesi(fenomenler));
 
 /* Görev 5:
 Aşağıdakileri yapmak için fenomenSil'i kullanın:
