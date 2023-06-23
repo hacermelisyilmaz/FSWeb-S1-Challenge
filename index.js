@@ -283,10 +283,10 @@ console.log("Görev 7:");
 
 function enFenomenler(aFenomenler) {
   const enFenomenDizisi = [];
-  console.log(aFenomenler);
+  //console.log(aFenomenler);
   for (let i = 0; i < aFenomenler.length; i++) {
     if (aFenomenler[i].followers > 100000000) {
-      console.log(aFenomenler[i].profile);
+      //console.log(aFenomenler[i].profile);
       enFenomenDizisi.push(aFenomenler[i].profile);
     }
   }
@@ -304,9 +304,19 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 ÖRNEK: fenomenGonderimSayisi(fenomenler, 'Will Smith') çağrıldığında "136" dönmelidir
 */
 
-function fenomenGonderimSayisi(/*kod*/) {
-  /*kod*/
+console.log("Görev 8:");
+
+function fenomenGonderimSayisi(aFenomenler, aProfile) {
+  for (let i = 0; i < aFenomenler.length; i++) {
+    for (let key in aFenomenler[i]) {
+      if (aFenomenler[i][key] === aProfile) {
+        return aFenomenler[i].posts;
+      }
+    }
+  }
 }
+
+console.log(fenomenGonderimSayisi(fenomenler, "Will Smith"));
 
 /* Görev 9:
 Aşağıdakileri yapmak için platformaGoreCokGonderiYapanFenomen'ni kullanın:
@@ -318,6 +328,8 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 
 Örnek: platformaGoreCokGonderiYapanFenomen(fenomenler, 'TikTok') çağrıldığında "charli damelio" dönmelidir
 */
+
+console.log("Görev 9:");
 
 function platformaGoreCokGonderiYapanFenomen(/*kod*/) {
   /*kod*/
