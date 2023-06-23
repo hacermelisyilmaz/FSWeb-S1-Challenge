@@ -147,6 +147,8 @@ Aşağıdakileri konsolda gösterim (console.log) işlemi gerçekleştirerek, yu
 
 (işlev yazmanıza gerek yok) */
 
+console.log("Görev 1:");
+
 //(1) Dizideki ilk fenomen (0. dizin) profil (profile) adı
 console.log(fenomenler[0].profile);
 
@@ -157,6 +159,8 @@ console.log(fenomenler[2].followers);
 (işlev yazmanıza gerek yok)
 Fenomenler dizisinde bir yazım hatası var 😱 7. sıradaki fenomen 'Justin Bieber' ın soyismi 'Biber' olarak yanlış yazılmış. Bu sorunu düzeltin ve çalışmanızı kontrol etmek için console.log() yapın.
 */
+
+console.log("Görev 2:");
 
 fenomenler[6].profile = "Justin Bieber";
 console.log(fenomenler[6].profile);
@@ -169,6 +173,8 @@ Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
 
 NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA TESTİ GEÇMEYECEKTİR!
 ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenomen: Leo Messi' */
+
+console.log("Görev 3:");
 
 function indekseGoreFenomen(aFenomenler, index) {
   return index + ". indekste bulunan fenomen: " + aFenomenler[index].profile;
@@ -183,6 +189,8 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 3. Yeni dizinin üzerinde dolaşın ve dizinin her bir indeksinde yalnızca fenomenin adına eşit olacak şekilde güncelleyin
 🌟 Dönüş ÖRNEĞİ: ["Instagram", "Cristiano Ronaldo", "Kylie"....]
 */
+
+console.log("Görev 4:");
 
 function profilListesi(aFenomenler) {
   const kopyaFenomenler = aFenomenler;
@@ -207,6 +215,9 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 5. Ortaya çıkan diziyi döndürün
 
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
+
+console.log("Görev 5:");
+
 function fenomenSil(aFenomenler, index) {
   const kopyaFenomenler = aFenomenler;
   kopyaFenomenler.splice(index, 1);
@@ -232,6 +243,8 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 5. Yeni oluşturulan nesneyi kopyalanan diziye ekleyin, ardından kopyalanan diziyi döndürün
 
 ÖRNEK: fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram") çağrıldığında dizinin sonuna yukarıdaki nesne en sona eklenerek yeni fenomenler dizisini döndürmelidir. */
+
+console.log("Görev 6:");
 
 function fenomenEkle(
   aFenomenler,
@@ -266,9 +279,21 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 ÖRNEK: enFenomenler(fenomenler) çağrıldığında sonuç olarak ["Instagram", "Cristiano Ronaldo", ... "Khabane lame"] dönemelidir
 */
 
-function enFenomenler(/*kod*/) {
-  /*kod*/
+console.log("Görev 7:");
+
+function enFenomenler(aFenomenler) {
+  const enFenomenDizisi = [];
+  console.log(aFenomenler);
+  for (let i = 0; i < aFenomenler.length; i++) {
+    if (aFenomenler[i].followers > 100000000) {
+      console.log(aFenomenler[i].profile);
+      enFenomenDizisi.push(aFenomenler[i].profile);
+    }
+  }
+  return enFenomenDizisi;
 }
+
+console.log(enFenomenler(fenomenler));
 
 /* Görev 8:
 Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
