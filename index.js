@@ -317,6 +317,7 @@ function fenomenGonderimSayisi(aFenomenler, aProfile) {
 }
 
 console.log(fenomenGonderimSayisi(fenomenler, "Will Smith"));
+// bu satır konsola undefined dönüyor
 
 /* Görev 9:
 Aşağıdakileri yapmak için platformaGoreCokGonderiYapanFenomen'ni kullanın:
@@ -331,9 +332,24 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 
 console.log("Görev 9:");
 
-function platformaGoreCokGonderiYapanFenomen(/*kod*/) {
-  /*kod*/
+function platformaGoreCokGonderiYapanFenomen(aFenomenler, aPlatform) {
+  const platformdakiFenomenler = aFenomenler.filter(
+    (feno) => feno.platform === aPlatform
+  );
+  //console.log(platformdakiFenomenler);
+  const postSayilari = [];
+  for (let i = 0; i < platformdakiFenomenler.length; i++) {
+    postSayilari.push(platformdakiFenomenler[i].posts);
+  }
+  //console.log(postSayilari);
+  //console.log(Math.max(...postSayilari));
+  const theFenomen = platformdakiFenomenler.filter(
+    (feno) => feno.posts === Math.max(...postSayilari)
+  );
+  //console.log(theFenomen);
 }
+
+console.log(platformaGoreCokGonderiYapanFenomen(fenomenler, "TikTok"));
 
 /* ***** GÖREVLERİN SONU ***** */
 
