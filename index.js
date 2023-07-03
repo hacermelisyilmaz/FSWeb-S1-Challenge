@@ -200,10 +200,10 @@ function profilListesi(aFenomenler) {
   return kopyaFenomenler;
 }
 
-//console.log(fenomenler);
+console.log(fenomenler);
 //bu satır tek tek objeleri yazdırırken,
 console.log(profilListesi(fenomenler));
-//console.log(fenomenler);
+console.log(fenomenler);
 //bu satır sadece profil isimlerini yazdırıyor. fonksiyonun asıl listeyi değiştirmemesi lazımdı. neden?
 
 /* Görev 5:
@@ -333,20 +333,20 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 console.log("Görev 9:");
 
 function platformaGoreCokGonderiYapanFenomen(aFenomenler, aPlatform) {
-  const platformdakiFenomenler = aFenomenler.filter(
-    (feno) => feno.platform === aPlatform
-  );
-  //console.log(platformdakiFenomenler);
-  const postSayilari = [];
-  for (let i = 0; i < platformdakiFenomenler.length; i++) {
-    postSayilari.push(platformdakiFenomenler[i].posts);
+  const platformdakiFenomenler = [];
+  const platformdakiPostSayisi = [];
+  for (let feno of aFenomenler) {
+    if (feno.platform === aPlatform) {
+      platformdakiFenomenler.push(feno);
+      platformdakiPostSayisi.push(feno.posts);
+    }
   }
-  //console.log(postSayilari);
-  //console.log(Math.max(...postSayilari));
-  const theFenomen = platformdakiFenomenler.filter(
-    (feno) => feno.posts === Math.max(...postSayilari)
-  );
-  //console.log(theFenomen);
+  const maksGonderi = Math.max(...platformdakiPostSayisi);
+  for (let fenomen of platformdakiFenomenler) {
+    if (fenomen.posts === maksGonderi) {
+      return fenomen.profile;
+    }
+  }
 }
 
 console.log(platformaGoreCokGonderiYapanFenomen(fenomenler, "TikTok"));
